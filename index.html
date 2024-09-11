@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB 색상 검색기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .slider-container {
+            margin: 10px 0;
+        }
+
+        .slider-label {
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        .slider-number {
+            width: 50px;
+            display: inline-block;
+        }
+
+        #rgbInfo {
+            color: gray;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            #colorBox {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            #colorBox {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>RGB 색상 검색기</h1>
+
+    <div id="colorBox"></div>
+
+    <div class="slider-container">
+        <label for="redRange" class="slider-label" style="color: red;">Red</label>
+        <input type="range" id="redRange" min="0" max="255" value="0">
+        <input type="number" id="redNumber" min="0" max="255" value="0" class="slider-number">
+    </div>
+
+    <div class="slider-container">
+        <label for="greenRange" class="slider-label" style="color: green;">Green</label>
+        <input type="range" id="greenRange" min="0" max="255" value="0">
+        <input type="number" id="greenNumber" min="0" max="255" value="0" class="slider-number">
+    </div>
+
+    <div class="slider-container">
+        <label for="blueRange" class="slider-label" style="color: blue;">Blue</label>
+        <input type="range" id="blueRange" min="0" max="255" value="0">
+        <input type="number" id="blueNumber" min="0" max="255" value="0" class="slider-number">
+    </div>
+
+    <p id="rgbInfo">
+        RGB 값의 범위는 0-255입니다. 세 값이 0에 가까울수록 흑색, 255에 가까울수록 흰색이 됩니다.
+    </p>
+
+    <script>
+        const colorBox = document.getElementById('colorBox');
+        const redRange = document.getElementById('redRange');
+        const greenRange = document.getElementById('greenRange');
+        const blueRange = document.getElementById('blueRange');
+        const redNumber = document.getElementById('redNumber');
+        const greenNumber = document.getElementById('greenNumber');
+        const blueNumber = document.getElementById('blueNumber');
+
+        function updateColor() {
+            const red = parseInt(redRange.value);
+            const green = parseInt(greenRange.value);
+            const blue = parseInt(blueRange.value);
+            colorBox.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            redNumber.value = red;
+            greenNumber.value = green;
+            blueNumber.value = blue;
+        }
+
+        redRange.addEventListener('input', updateColor);
+        greenRange.addEventListener('input', updateColor);
+        blueRange.addEventListener('input', updateColor);
+
+        redNumber.addEventListener('input', () => {
+            redRange.value = redNumber.value;
+            updateColor();
+        });
+
+        greenNumber.addEventListener('input', () => {
+            greenRange.value = greenNumber.value;
+            updateColor();
+        });
+
+        blueNumber.addEventListener('input', () => {
+            blueRange.value = blueNumber.value;
+            updateColor();
+        });
+
+        updateColor();
+    </script>
+
+</body>
+</html>
