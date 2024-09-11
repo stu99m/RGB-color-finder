@@ -26,23 +26,29 @@
             margin: 15px 0;
             max-width: 400px;
             margin: 0 auto;
+        }
+
+        .label-input-container {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
         .slider-label {
             font-weight: bold;
-            width: 60px; /* 모든 라벨의 너비를 동일하게 맞춤 */
-            text-align: left;
-        }
-
-        input[type="range"] {
-            width: 100%;
+            width: 60px;
+            text-align: right; /* 오른쪽 정렬 */
         }
 
         .slider-number {
             width: 50px;
+            text-align: left; /* 왼쪽 정렬 */
             margin-left: 10px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 5px;
         }
 
         #rgbInfo {
@@ -64,10 +70,6 @@
                 height: 250px;
             }
         }
-
-        .number-input {
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
@@ -77,20 +79,26 @@
     <div id="colorBox"></div>
 
     <div class="slider-container">
-        <label for="redRange" class="slider-label" style="color: red;">Red</label>
-        <input type="number" id="redNumber" min="0" max="255" value="0" class="slider-number number-input">
+        <div class="label-input-container">
+            <label for="redRange" class="slider-label" style="color: red;">Red</label>
+            <input type="number" id="redNumber" min="0" max="255" value="0" class="slider-number">
+        </div>
         <input type="range" id="redRange" min="0" max="255" value="0">
     </div>
 
     <div class="slider-container">
-        <label for="greenRange" class="slider-label" style="color: green;">Green</label>
-        <input type="number" id="greenNumber" min="0" max="255" value="0" class="slider-number number-input">
+        <div class="label-input-container">
+            <label for="greenRange" class="slider-label" style="color: green;">Green</label>
+            <input type="number" id="greenNumber" min="0" max="255" value="0" class="slider-number">
+        </div>
         <input type="range" id="greenRange" min="0" max="255" value="0">
     </div>
 
     <div class="slider-container">
-        <label for="blueRange" class="slider-label" style="color: blue;">Blue</label>
-        <input type="number" id="blueNumber" min="0" max="255" value="0" class="slider-number number-input">
+        <div class="label-input-container">
+            <label for="blueRange" class="slider-label" style="color: blue;">Blue</label>
+            <input type="number" id="blueNumber" min="0" max="255" value="0" class="slider-number">
+        </div>
         <input type="range" id="blueRange" min="0" max="255" value="0">
     </div>
 
