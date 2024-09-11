@@ -16,9 +16,9 @@
         }
 
         #colorBox {
-            width: 400px;
-            height: 400px;
-            margin: 5px auto;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
             background-color: rgb(0, 0, 0);
         }
 
@@ -26,24 +26,26 @@
             margin: 15px 0;
             max-width: 400px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .label-input-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         .slider-label {
             font-weight: bold;
-            width: 60px;
+            width: 80px; /* 고정된 너비로 모든 라벨의 위치를 일관되게 */
             text-align: right; /* 오른쪽 정렬 */
+            margin-right: 10px; /* 라벨과 숫자 입력칸 사이 간격 조정 */
         }
 
         .slider-number {
             width: 50px;
-            text-align: left; /* 왼쪽 정렬 */
-            margin-left: 10px;
+            text-align: left;
         }
 
         input[type="range"] {
@@ -59,15 +61,15 @@
 
         @media (max-width: 600px) {
             #colorBox {
-                width: 300px;
-                height: 300px;
+                width: 400px;
+                height: 400px;
             }
         }
 
         @media (min-width: 601px) {
             #colorBox {
-                width: 400px;
-                height: 400px;
+                width: 250px;
+                height: 250px;
             }
         }
     </style>
