@@ -23,8 +23,8 @@
         }
 
         .slider-container {
-            margin: 10px 0;
-            max-width: 400px; /* 슬라이더의 최대 너비 지정 */
+            margin: 15px 0;
+            max-width: 400px;
             margin: 0 auto;
         }
 
@@ -60,6 +60,10 @@
                 height: 250px;
             }
         }
+
+        .number-input {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -70,26 +74,25 @@
 
     <div class="slider-container">
         <label for="redRange" class="slider-label" style="color: red;">Red</label>
+        <input type="number" id="redNumber" min="0" max="255" value="0" class="slider-number number-input">
         <input type="range" id="redRange" min="0" max="255" value="0">
-        <input type="number" id="redNumber" min="0" max="255" value="0" class="slider-number">
     </div>
 
     <div class="slider-container">
         <label for="greenRange" class="slider-label" style="color: green;">Green</label>
+        <input type="number" id="greenNumber" min="0" max="255" value="0" class="slider-number number-input">
         <input type="range" id="greenRange" min="0" max="255" value="0">
-        <input type="number" id="greenNumber" min="0" max="255" value="0" class="slider-number">
     </div>
 
     <div class="slider-container">
         <label for="blueRange" class="slider-label" style="color: blue;">Blue</label>
+        <input type="number" id="blueNumber" min="0" max="255" value="0" class="slider-number number-input">
         <input type="range" id="blueRange" min="0" max="255" value="0">
-        <input type="number" id="blueNumber" min="0" max="255" value="0" class="slider-number">
     </div>
 
     <p id="rgbInfo">
         RGB 값의 범위는 0-255입니다. <br>
-        세 값이 0에 가까울수록 흑색, <br>
-        255에 가까울수록 흰색이 됩니다.
+        세 값이 0에 가까울수록 검정색, 255에 가까울수록 흰색이 됩니다.
     </p>
 
     <script>
