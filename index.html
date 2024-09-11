@@ -24,31 +24,40 @@
 
         .slider-container {
             margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .slider-label {
             font-weight: bold;
+            margin-right: 10px;
         }
 
         input[type="range"] {
-            width: 100%;
+            width: 300px; /* 슬라이더 길이를 고정 */
+            margin-right: 10px;
         }
 
         .slider-number {
             width: 50px;
-            display: inline-block;
         }
 
         #rgbInfo {
             color: gray;
             font-size: 12px;
             margin-top: 20px;
+            line-height: 1.6;
         }
 
         @media (max-width: 600px) {
             #colorBox {
                 width: 150px;
                 height: 150px;
+            }
+
+            input[type="range"] {
+                width: 200px; /* 모바일에서는 슬라이더 길이를 더 짧게 */
             }
         }
 
@@ -85,7 +94,9 @@
     </div>
 
     <p id="rgbInfo">
-        RGB 값의 범위는 0-255입니다. 세 값이 0에 가까울수록 흑색, 255에 가까울수록 흰색이 됩니다.
+        RGB 값의 범위는 0-255입니다.<br>
+        세 값이 0에 가까울수록 흑색,<br>
+        255에 가까울수록 흰색이 됩니다.
     </p>
 
     <script>
