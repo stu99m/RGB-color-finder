@@ -26,10 +26,14 @@
             margin: 15px 0;
             max-width: 400px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
         }
 
         .slider-label {
             font-weight: bold;
+            width: 60px; /* 모든 라벨의 너비를 동일하게 맞춤 */
+            text-align: left;
         }
 
         input[type="range"] {
@@ -38,7 +42,7 @@
 
         .slider-number {
             width: 50px;
-            display: inline-block;
+            margin-left: 10px;
         }
 
         #rgbInfo {
